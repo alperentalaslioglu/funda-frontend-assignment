@@ -1,0 +1,23 @@
+/* - - - - - - - - - - - - - - - -
+
+      #HEADER OF APP
+
+- - - - - - - - - - - - - - - - - */
+
+.header {
+  background-color: #fff;
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 5px;
+  @include clearfix();
+
+  &__logo {
+    background-size: cover;
+    display: inline-block;
+    width: 120px;
+    height: 100%;
+    margin-top: 5px;
+  }
+}

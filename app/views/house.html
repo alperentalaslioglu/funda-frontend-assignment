@@ -1,0 +1,120 @@
+<div class="house-detail" ng-controller="HouseDetailController as home">
+
+    <div class="house-detail__title">
+        <div class="container">
+            <span class="house-detail__title-text">{{home.detail.Titels[0].Omschrijving}}</span>
+        </div>
+    </div>
+
+    <div class="house-detail__summary">
+        <div class="container">
+            <div class="house-detail__summary-item">
+                <div class="house-detail__summary-item-title">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    Assigned
+                </div>
+                <div class="house-detail__summary-item-value">
+                    {{home.detail.Makelaar}}
+                </div>
+            </div>
+            <div class="house-detail__summary-item">
+                <div class="house-detail__summary-item-title">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    Location
+                </div>
+                <div class="house-detail__summary-item-value">
+                    {{home.detail.Plaats}}
+                </div>
+            </div>
+            <div class="house-detail__summary-item">
+                <div class="house-detail__summary-item-title">
+                    <i class="fa fa-money" aria-hidden="true"></i>
+                    Price
+                </div>
+                <div class="house-detail__summary-item-value">
+                    &euro;&nbsp{{home.detail.Koopprijs}}
+                </div>
+            </div>
+            <div class="house-detail__summary-item">
+                <div class="house-detail__summary-item-title">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    Create Date
+                </div>
+                <div class="house-detail__summary-item-value">
+                    {{home.detail.GewijzigdDatum | dateFilter | date: 'dd/MM/yyyy'}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-flex">
+        <div class="house-detail__media">
+            <image-slider images="home.images"/>
+        </div>
+        <div class="house-detail__options">
+            <ul class="house-detail__options-list">
+                <li class="house-detail__options-list-item">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                    Share
+                </li>
+                <li class="house-detail__options-list-item">
+                    <i class="fa fa-bookmark" aria-hidden="true"></i>
+                    Save to Favorites
+                </li>
+                <li class="house-detail__options-list-item">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    Send Email
+                </li>
+                <li class="house-detail__options-list-item">
+                    <i class="fa fa-bug" aria-hidden="true"></i>
+                    Report
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="house-detail__details">
+        <div class="container">
+            <span class="house-detail__details-title">
+                Description
+            </span>
+            <div class="house-detail__details-full">
+                <p ng-repeat="descriptionLine in home.description track by $index">
+                    {{descriptionLine}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="house-detail__overview">
+        <div class="container">
+            <span class="house-detail__overview-title">
+                Property Attributes
+            </span>
+
+            <div ng-repeat="attribute in home.detail.Kenmerken">
+                <span class="house-detail__overview-type-title">
+                    <i class="fa fa-tags" aria-hidden="true"></i>
+                    {{attribute.Titel}}
+                </span>
+                <ul class="house-detail__overview-type">
+                    <li class="house-detail__attribute" ng-repeat="subAttr in attribute.Kenmerken">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        {{subAttr.Naam}} : <span ng-bind-html="subAttr.Waarde"></span>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="house-detail__location">
+        <div class="container">
+            <span class="house-detail__location-title">
+                Location
+            </span>
+            <div class="house-detail__map" id="map">map</div>
+        </div>
+    </div>
+
+</div>

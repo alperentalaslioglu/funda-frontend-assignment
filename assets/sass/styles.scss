@@ -1,0 +1,35 @@
+/**
+ * TABLE OF CONTENTS
+ *
+ *
+ * TOOLS
+ * _mixins.scss ...............Useful mixins.
+ *
+ * GENERIC
+ * _normalize.scss ........Normalize user agent's styles
+ * _body.scss ............Body rule-sets
+ * _generics.scss.........Generic classes to use everywhere
+ *
+ * BASE
+ * _colors.scss.............Color palette
+ * _typography.scss..........Fonts used in application
+ * _metrics.scss............Some metrics to determine screen size
+ *
+ * COMPONENTS
+ * _header.scss............Header of page
+ * _homedetail.scss..........Home details component
+ *
+ *
+ */
+
+@import "normalize";
+@import "mixins";
+@import "metrics";
+@import "colors";
+@import "typography";
+@import "body";
+@import "generics";
+@import "components/header";
+@import "components/homedetails";
+@import "components/slider";
+
